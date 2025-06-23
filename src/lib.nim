@@ -78,6 +78,7 @@ func getAllAntinodes2(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
                     else: break
 
 template guardedSeqAdd(loc: Coord, guardedSeq: ref GuardedSeq)=
+# template guardedSeqAdd(loc: Coord, guardedSeq: ptr GuardedSeq)=
     withLock(guardedSeq.l):
         guardedSeq.v.add(loc)
     # debugecho guardedSeq.v
