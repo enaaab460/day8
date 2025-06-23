@@ -1,4 +1,5 @@
 import strutils
+import strformat
 import std/enumerate
 import std/sequtils
 import tables
@@ -73,14 +74,17 @@ func getAllAntinodes2(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
                         nextNode = tempNode
                     else: break
 
-func threadworker(freq: Freq, locs: seq[Coord], loc: Coord,grid: Coord): seq[Coord] =
-    let otherLocs = locs.filterIt(it != loc)
-    for otherLoc in otherLocs:
+# func threadworker(locs: seq[Coord], loc: Coord,grid: Coord): seq[Coord] =
+func threadworker(locs: ptr seq[Coord], loc: Coord,grid: Coord): seq[Coord] =
+    # let otherLocs = locs.filterIt(it != loc)
+    var antinode, nextNode, nextNode2, tempNode: Coord
+    # for otherLoc in otherLocs:
+    for otherLoc in locs[]:
+        if otherLoc == loc: continue
         result.add(otherLoc)
-        var antinode = getAntinode(loc, otherLoc)
-        var nextNode = otherLoc
-        var nextNode2 = antinode
-        var tempNode: Coord
+        antinode = getAntinode(loc, otherLoc)
+        nextNode = otherLoc
+        nextNode2 = antinode
         while true:
             if inGrid(nextNode2, grid):
                 result.add(nextNode2)
@@ -92,8 +96,9 @@ func threadworker(freq: Freq, locs: seq[Coord], loc: Coord,grid: Coord): seq[Coo
 proc getAllAntinodes2multi(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
     var tasks: seq[Flowvar[seq[Coord]]]
     for freq, locs in antennas:
+        let locsPtr = locs.addr
         for loc in locs:
-            tasks.add spawn threadworker(freq, locs, loc, grid)
+            tasks.add spawn threadworker(locsPtr, loc, grid)
 
     var resSeq: seq[Coord]
     for task in tasks:

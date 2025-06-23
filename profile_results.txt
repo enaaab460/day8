@@ -1,11 +1,12 @@
 total executions of each stack trace:
-Entry: 1/9 Calls: 11/28 = 39.29% [sum: 11; 11/28 = 39.29%]
-  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: union 13/28 = 46.43%
-  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: + 13/28 = 46.43%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 14/28 = 50.00%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\prof.nim: prof 14/28 = 50.00%
-Entry: 2/9 Calls: 10/28 = 35.71% [sum: 21; 21/28 = 75.00%]
-  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 14/28 = 50.00%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 13/28 = 46.43%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 13/28 = 46.43%
-  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 13/28 = 46.43%
+Entry: 1/7 Calls: 2/9 = 22.22% [sum: 2; 2/9 = 22.22%]
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: - 2/9 = 22.22%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAntinode 5/9 = 55.56%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 5/9 = 55.56%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 5/9 = 55.56%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 5/9 = 55.56%
+Entry: 2/7 Calls: 2/9 = 22.22% [sum: 4; 4/9 = 44.44%]
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAntinode 5/9 = 55.56%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 5/9 = 55.56%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 5/9 = 55.56%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 5/9 = 55.56%
