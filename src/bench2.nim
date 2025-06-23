@@ -1,6 +1,6 @@
 import benchy
 include lib
-import nimprof
+# import nimprof
 
 let input = getInput("input/puzzle.txt")
 let antennas = readAntennas(input)
