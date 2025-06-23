@@ -77,12 +77,12 @@ func getAllAntinodes2(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
                         nextNode = tempNode
                     else: break
 
-func guardedSeqAdd(loc: Coord, guardedSeq: ref GuardedSeq)=
+template guardedSeqAdd(loc: Coord, guardedSeq: ptr GuardedSeq)=
     withLock(guardedSeq.l):
         guardedSeq.v.add(loc)
-        # debugecho guardedSeq.v
+    # debugecho guardedSeq.v
 
-func threadworker(locs: seq[Coord], loc: Coord,grid: Coord, guardedSeq: ref GuardedSeq)=
+func threadworker(locs: seq[Coord], loc: Coord,grid: Coord, guardedSeq: ptr GuardedSeq)=
 # func threadworker(locs: ptr seq[Coord], loc: Coord,grid: Coord, guardedSeq: ref GuardedSeq)=
     var antinode, nextNode, nextNode2, tempNode: Coord
     # for otherLoc in locs[]:
@@ -107,7 +107,8 @@ func threadworker(locs: seq[Coord], loc: Coord,grid: Coord, guardedSeq: ref Guar
         #         guardedSeq.v.add(coord)
 
 proc getAllAntinodes2multi(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
-    var guardedSeq = new GuardedSeq
+    # var guardedSeq = new GuardedSeq
+    var guardedSeq = GuardedSeq()
     guardedSeq.l.initLock()
     # for freq, locs in antennas:
     for locs in antennas.values:
@@ -115,7 +116,7 @@ proc getAllAntinodes2multi(antennas: GroupedAntennas, grid: Coord): HashSet[Coor
         # echo &"{locsPtr.repr=}"
         for loc in locs:
             # spawn threadworker(locsPtr, loc, grid, guardedSeq)
-            spawn threadworker(locs, loc, grid, guardedSeq)
+            spawn threadworker(locs, loc, grid, guardedSeq.addr)
     sync()
     withLock(guardedSeq.l):
         return toHashSet(guardedSeq.v)

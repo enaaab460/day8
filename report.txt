@@ -1,0 +1,353 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 35.15      9.20     9.20                             do_linear_probe_nonempty
+ 22.90     15.19     5.99                             __MCF_tls_table_get
+ 13.38     18.68     3.50                             _MCF_thread_self
+ 12.16     21.86     3.18                             __emutls_get_address
+  1.80     22.34     0.47                             nimFrame
+  1.53     22.73     0.40                             nimProfile
+  1.51     23.13     0.40                             nimFrame
+  1.11     23.42     0.29                             sets::rawGet(HashSet<prof::Coord>, prof::Coord, var<int>)
+  0.78     23.62     0.20                             hashes::hiXorLo(uInt64, uInt64)
+  0.65     23.80     0.17                             prof::getAntinode(prof::Coord, prof::Coord)
+  0.65     23.96     0.17                             prof::getAllAntinodes2(Table<char, seq<prof::Coord> >, prof::Coord)
+  0.57     24.11     0.15                             nimFrame
+  0.55     24.26     0.14                             hashes::hashWangYi1(uInt64)
+  0.52     24.39     0.14                             prof::minus_(prof::Coord, prof::Coord)
+  0.46     24.52     0.12                             sets::incl(var<HashSet<prof::Coord> >, prof::Coord)
+  0.44     24.63     0.12                             _MCF_tls_key_drop_ref_nonnull
+  0.44     24.75     0.12                             hashes::emarkamp_(int, int)
+  0.34     24.84     0.09                             prof::inGrid(prof::Coord, prof::Coord)
+  0.34     24.93     0.09                             sets::rawGetKnownHC(HashSet<prof::Coord>, prof::Coord, int)
+  0.32     25.01     0.09                             hashes::hash(int)
+  0.31     25.09     0.08                             sets::nextTry(int, int)
+  0.31     25.17     0.08                             nimZeroMem
+  0.29     25.25     0.07                             sets::isFilled(int)
+  0.27     25.32     0.07                             sets::enlarge(var<HashSet<prof::Coord> >)
+  0.27     25.39     0.07                             system::eqeq_(prof::Coord, prof::Coord)
+  0.27     25.45     0.07                             system::setLen(var<seq<KeyValuePair<prof::Coord> > >, range09223372036854775807)
+  0.27     25.52     0.07                             prepareSeqAddUninit
+  0.25     25.59     0.07                             sets::rawInsert(var<HashSet<prof::Coord> >, var<KeyValuePairSeq<prof::Coord> >, prof::Coord, int, int)
+  0.23     25.65     0.06                             nimFrame
+  0.21     25.70     0.06                             hashes::emarkdollar_(int)
+  0.21     25.76     0.06                             hashes::hash(prof::Coord)
+  0.19     25.81     0.05                             prof::star_(prof::Coord, int)
+  0.19     25.86     0.05                             nimZeroMem
+  0.17     25.91     0.04                             sets::mustRehash(HashSet<prof::Coord>)
+  0.15     25.95     0.04                             system::add(var<seq<prof::Coord> >, sink<prof::Coord>)
+  0.15     25.98     0.04                             __MCF_tls_table_xset
+  0.15     26.02     0.04                             alignedDealloc
+  0.08     26.05     0.02                             memset
+  0.06     26.06     0.01                             prof::eqcopy_(var<seq<prof::Coord> >, seq<prof::Coord>)
+  0.06     26.07     0.01                             system::align(int, int)
+  0.04     26.09     0.01                             sets::eqdestroy_(seq<KeyValuePair<prof::Coord> >)
+  0.04     26.09     0.01                             system::deallocImpl(pointer)
+  0.04     26.11     0.01                             system::alignedAlloc(range09223372036854775807, range09223372036854775807)
+  0.04     26.11     0.01                             system::alignedRealloc(pointer, range09223372036854775807, range09223372036854775807, range09223372036854775807)
+  0.04     26.12     0.01                             system::newSeq__prof_u2244(range09223372036854775807)
+  0.04     26.14     0.01                             system::setLen(var<seq<prof::Coord> >, range09223372036854775807)
+  0.04     26.14     0.01                             free
+  0.02     26.15     0.01                             system::newSeq(var<seq<KeyValuePair<char, seq<prof::Coord> > > >, range09223372036854775807)
+  0.02     26.16     0.01                             system::shrink(var<seq<prof::Coord> >, range09223372036854775807)
+  0.02     26.16     0.01                             raiseOverflow
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2023 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.04% of 26.16 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     35.1    9.20    0.00                 do_linear_probe_nonempty [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     22.9    5.99    0.00                 __MCF_tls_table_get [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     13.4    3.50    0.00                 _MCF_thread_self [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]     12.2    3.18    0.00                 __emutls_get_address [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]      1.8    0.47    0.00                 nimFrame [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      1.5    0.40    0.00                 nimProfile [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      1.5    0.40    0.00                 nimFrame [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      1.1    0.29    0.00                 sets::rawGet(HashSet<prof::Coord>, prof::Coord, var<int>) [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      0.8    0.20    0.00                 hashes::hiXorLo(uInt64, uInt64) [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     0.6    0.17    0.00                 prof::getAntinode(prof::Coord, prof::Coord) [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     0.6    0.17    0.00                 prof::getAllAntinodes2(Table<char, seq<prof::Coord> >, prof::Coord) [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     0.6    0.15    0.00                 nimFrame [12]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     0.6    0.14    0.00                 hashes::hashWangYi1(uInt64) [13]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     0.5    0.14    0.00                 prof::minus_(prof::Coord, prof::Coord) [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.5    0.12    0.00                 sets::incl(var<HashSet<prof::Coord> >, prof::Coord) [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     0.4    0.12    0.00                 _MCF_tls_key_drop_ref_nonnull [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.4    0.12    0.00                 hashes::emarkamp_(int, int) [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     0.3    0.09    0.00                 prof::inGrid(prof::Coord, prof::Coord) [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     0.3    0.09    0.00                 sets::rawGetKnownHC(HashSet<prof::Coord>, prof::Coord, int) [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.3    0.09    0.00                 hashes::hash(int) [20]
+-----------------------------------------------
+                                                 <spontaneous>
+[21]     0.3    0.08    0.00                 nimZeroMem [21]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     0.3    0.08    0.00                 sets::nextTry(int, int) [22]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     0.3    0.07    0.00                 sets::isFilled(int) [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.3    0.07    0.00                 prepareSeqAddUninit [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     0.3    0.07    0.00                 sets::enlarge(var<HashSet<prof::Coord> >) [25]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.3    0.07    0.00                 system::eqeq_(prof::Coord, prof::Coord) [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.3    0.07    0.00                 system::setLen(var<seq<KeyValuePair<prof::Coord> > >, range09223372036854775807) [27]
+-----------------------------------------------
+                                                 <spontaneous>
+[28]     0.2    0.07    0.00                 sets::rawInsert(var<HashSet<prof::Coord> >, var<KeyValuePairSeq<prof::Coord> >, prof::Coord, int, int) [28]
+-----------------------------------------------
+                                                 <spontaneous>
+[29]     0.2    0.06    0.00                 nimFrame [29]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     0.2    0.06    0.00                 hashes::emarkdollar_(int) [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.2    0.06    0.00                 hashes::hash(prof::Coord) [31]
+-----------------------------------------------
+                                                 <spontaneous>
+[32]     0.2    0.05    0.00                 nimZeroMem [32]
+-----------------------------------------------
+                                                 <spontaneous>
+[33]     0.2    0.05    0.00                 prof::star_(prof::Coord, int) [33]
+-----------------------------------------------
+                                                 <spontaneous>
+[34]     0.2    0.04    0.00                 sets::mustRehash(HashSet<prof::Coord>) [34]
+-----------------------------------------------
+                                                 <spontaneous>
+[35]     0.2    0.04    0.00                 alignedDealloc [35]
+-----------------------------------------------
+                                                 <spontaneous>
+[36]     0.2    0.04    0.00                 system::add(var<seq<prof::Coord> >, sink<prof::Coord>) [36]
+-----------------------------------------------
+                                                 <spontaneous>
+[37]     0.2    0.04    0.00                 __MCF_tls_table_xset [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[38]     0.1    0.02    0.00                 memset [38]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.1    0.01    0.00                 prof::eqcopy_(var<seq<prof::Coord> >, seq<prof::Coord>) [39]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.1    0.01    0.00                 system::align(int, int) [40]
+-----------------------------------------------
+                                                 <spontaneous>
+[41]     0.0    0.01    0.00                 free [41]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.0    0.01    0.00                 sets::eqdestroy_(seq<KeyValuePair<prof::Coord> >) [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.0    0.01    0.00                 system::deallocImpl(pointer) [43]
+-----------------------------------------------
+                                                 <spontaneous>
+[44]     0.0    0.01    0.00                 system::alignedAlloc(range09223372036854775807, range09223372036854775807) [44]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.0    0.01    0.00                 system::alignedRealloc(pointer, range09223372036854775807, range09223372036854775807, range09223372036854775807) [45]
+-----------------------------------------------
+                                                 <spontaneous>
+[46]     0.0    0.01    0.00                 system::newSeq__prof_u2244(range09223372036854775807) [46]
+-----------------------------------------------
+                                                 <spontaneous>
+[47]     0.0    0.01    0.00                 system::setLen(var<seq<prof::Coord> >, range09223372036854775807) [47]
+-----------------------------------------------
+                                                 <spontaneous>
+[48]     0.0    0.01    0.00                 raiseOverflow [48]
+-----------------------------------------------
+                                                 <spontaneous>
+[49]     0.0    0.01    0.00                 system::newSeq(var<seq<KeyValuePair<char, seq<prof::Coord> > > >, range09223372036854775807) [49]
+-----------------------------------------------
+                                                 <spontaneous>
+[50]     0.0    0.01    0.00                 system::shrink(var<seq<prof::Coord> >, range09223372036854775807) [50]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2023 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [3] _MCF_thread_self       [13] hashes::hashWangYi1(uInt64) (hashes.nim) [2] __MCF_tls_table_get
+  [16] _MCF_tls_key_drop_ref_nonnull [30] hashes::emarkdollar_(int) (hashes.nim) [37] __MCF_tls_table_xset
+  [10] prof::getAntinode(prof::Coord, prof::Coord) [20] hashes::hash(int) (hashes.nim) [4] __emutls_get_address
+  [11] prof::getAllAntinodes2(Table<char, seq<prof::Coord> >, prof::Coord) [31] hashes::hash(prof::Coord) [35] alignedDealloc
+  [33] prof::star_(prof::Coord, int) [9] hashes::hiXorLo(uInt64, uInt64) (hashes.nim) [1] do_linear_probe_nonempty
+  [18] prof::inGrid(prof::Coord, prof::Coord) [17] hashes::emarkamp_(int, int) (hashes.nim) [41] free
+  [14] prof::minus_(prof::Coord, prof::Coord) [43] system::deallocImpl(pointer) [38] memset
+  [39] prof::eqcopy_(var<seq<prof::Coord> >, seq<prof::Coord>) [44] system::alignedAlloc(range09223372036854775807, range09223372036854775807) [7] nimFrame (excpt.nim)
+  [42] sets::eqdestroy_(seq<KeyValuePair<prof::Coord> >) [45] system::alignedRealloc(pointer, range09223372036854775807, range09223372036854775807, range09223372036854775807) [12] nimFrame (excpt.nim)
+  [34] sets::mustRehash(HashSet<prof::Coord>) (hashcommon.nim) [46] system::newSeq__prof_u2244(range09223372036854775807) [29] nimFrame (excpt.nim)
+  [19] sets::rawGetKnownHC(HashSet<prof::Coord>, prof::Coord, int) (hashcommon.nim) [36] system::add(var<seq<prof::Coord> >, sink<prof::Coord>) [5] nimFrame (excpt.nim)
+  [15] sets::incl(var<HashSet<prof::Coord> >, prof::Coord) [40] system::align(int, int) [6] nimProfile
+   [8] sets::rawGet(HashSet<prof::Coord>, prof::Coord, var<int>) (hashcommon.nim) [26] system::eqeq_(prof::Coord, prof::Coord) [32] nimZeroMem (memory.nim)
+  [25] sets::enlarge(var<HashSet<prof::Coord> >) [49] system::newSeq(var<seq<KeyValuePair<char, seq<prof::Coord> > > >, range09223372036854775807) [21] nimZeroMem (memory.nim)
+  [22] sets::nextTry(int, int) (hashcommon.nim) [27] system::setLen(var<seq<KeyValuePair<prof::Coord> > >, range09223372036854775807) [24] prepareSeqAddUninit
+  [23] sets::isFilled(int) (hashcommon.nim) [47] system::setLen(var<seq<prof::Coord> >, range09223372036854775807) [48] raiseOverflow
+  [28] sets::rawInsert(var<HashSet<prof::Coord> >, var<KeyValuePairSeq<prof::Coord> >, prof::Coord, int, int) [50] system::shrink(var<seq<prof::Coord> >, range09223372036854775807)

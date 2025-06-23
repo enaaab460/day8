@@ -1,8 +1,10 @@
 include lib
-import nimprof
 
 let input = getInput("input/puzzle.txt")
 let antennas = readAntennas(input)
 let grid = getGridDimensions(input)
 
-discard getAllAntinodes2multi(antennas, grid)
+# for _ in 1..10_000:
+    # discard getAllAntinodes2(antennas, grid).len
+    # discard getAllAntinodes2(antennas, grid)
+discard getAllAntinodes2(antennas, grid)

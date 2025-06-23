@@ -1,12 +1,142 @@
 total executions of each stack trace:
-Entry: 1/7 Calls: 2/9 = 22.22% [sum: 2; 2/9 = 22.22%]
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: - 2/9 = 22.22%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAntinode 5/9 = 55.56%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 5/9 = 55.56%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 5/9 = 55.56%
-  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 5/9 = 55.56%
-Entry: 2/7 Calls: 2/9 = 22.22% [sum: 4; 4/9 = 44.44%]
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAntinode 5/9 = 55.56%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 5/9 = 55.56%
-  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 5/9 = 55.56%
-  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 5/9 = 55.56%
+Entry: 1/29 Calls: 92/345 = 26.67% [sum: 92; 92/345 = 26.67%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\core\locks.nim: threadworker 188/345 = 54.49%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 2/29 Calls: 42/345 = 12.17% [sum: 134; 134/345 = 38.84%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: init 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: initHashSet 43/345 = 12.46%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 3/29 Calls: 40/345 = 11.59% [sum: 174; 174/345 = 50.43%]
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAntinode 78/345 = 22.61%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 188/345 = 54.49%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 4/29 Calls: 23/345 = 6.67% [sum: 197; 197/345 = 57.10%]
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: - 23/345 = 6.67%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAntinode 78/345 = 22.61%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 188/345 = 54.49%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 5/29 Calls: 22/345 = 6.38% [sum: 219; 219/345 = 63.48%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\system.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 6/29 Calls: 16/345 = 4.64% [sum: 235; 235/345 = 68.12%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: selectWorker 16/345 = 4.64%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: nimSpawn3 17/345 = 4.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 7/29 Calls: 15/345 = 4.35% [sum: 250; 250/345 = 72.46%]
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: * 15/345 = 4.35%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAntinode 78/345 = 22.61%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 188/345 = 54.49%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 8/29 Calls: 15/345 = 4.35% [sum: 265; 265/345 = 76.81%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 9/29 Calls: 13/345 = 3.77% [sum: 278; 278/345 = 80.58%]
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: inGrid 13/345 = 3.77%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 188/345 = 54.49%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 10/29 Calls: 8/345 = 2.32% [sum: 286; 286/345 = 82.90%]
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 11/29 Calls: 7/345 = 2.03% [sum: 293; 293/345 = 84.93%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: nimArgsPassingDone 7/345 = 2.03%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 12/29 Calls: 6/345 = 1.74% [sum: 299; 299/345 = 86.67%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\setimpl.nim: rawInsert 6/345 = 1.74%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\setimpl.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 13/29 Calls: 5/345 = 1.45% [sum: 304; 304/345 = 88.12%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\system.nim: == 7/345 = 2.03%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworker 188/345 = 54.49%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: threadworkerWrapper 203/345 = 58.84%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\concurrency\threadpool.nim: slave 218/345 = 63.19%
+Entry: 14/29 Calls: 5/345 = 1.45% [sum: 309; 309/345 = 89.57%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 15/29 Calls: 5/345 = 1.45% [sum: 314; 314/345 = 91.01%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: isFilled 5/345 = 1.45%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 16/29 Calls: 5/345 = 1.45% [sum: 319; 319/345 = 92.46%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hiXorLo 5/345 = 1.45%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hashWangYi1 9/345 = 2.61%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 17/29 Calls: 4/345 = 1.16% [sum: 323; 323/345 = 93.62%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hashWangYi1 9/345 = 2.61%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 18/29 Calls: 4/345 = 1.16% [sum: 327; 327/345 = 94.78%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: !& 4/345 = 1.16%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 19/29 Calls: 4/345 = 1.16% [sum: 331; 331/345 = 95.94%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 20/29 Calls: 3/345 = 0.87% [sum: 334; 334/345 = 96.81%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 21/29 Calls: 2/345 = 0.58% [sum: 336; 336/345 = 97.39%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: !$ 2/345 = 0.58%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\hashes.nim: hash 21/345 = 6.09%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
+Entry: 22/29 Calls: 2/345 = 0.58% [sum: 338; 338/345 = 97.97%]
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\system.nim: == 7/345 = 2.03%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\hashcommon.nim: rawGet 31/345 = 8.99%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: incl 42/345 = 12.17%
+  C:\Users\youse\.choosenim\toolchains\nim-2.2.2\lib\pure\collections\sets.nim: toHashSet 86/345 = 24.93%
+  C:\Users\youse\Desktop\nim\aoc24\day8\src\lib.nim: getAllAntinodes2multi 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: test`gensym43 126/345 = 36.52%
+  C:\Users\youse\.nimble\pkgs2\benchy-0.0.1-f4193bde91c49ba150a2dbc00a6f9470f773beae\benchy.nim: bench2 126/345 = 36.52%
