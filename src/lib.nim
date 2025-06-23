@@ -73,27 +73,30 @@ func getAllAntinodes2(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
                         nextNode = tempNode
                     else: break
 
-func threadworker(freq: Freq, locs: seq[Coord], loc: Coord,grid: Coord): HashSet[Coord] =
+func threadworker(freq: Freq, locs: seq[Coord], loc: Coord,grid: Coord): seq[Coord] =
     let otherLocs = locs.filterIt(it != loc)
     for otherLoc in otherLocs:
-        result.incl(otherLoc)
+        result.add(otherLoc)
         var antinode = getAntinode(loc, otherLoc)
         var nextNode = otherLoc
         var nextNode2 = antinode
         var tempNode: Coord
         while true:
             if inGrid(nextNode2, grid):
-                result.incl(nextNode2)
+                result.add(nextNode2)
                 tempNode = nextNode2
                 nextNode2 = getAntinode(nextNode, nextNode2)
                 nextNode = tempNode
             else: break
 
 proc getAllAntinodes2multi(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
-    var tasks: seq[Flowvar[HashSet[Coord]]]
+    var tasks: seq[Flowvar[seq[Coord]]]
     for freq, locs in antennas:
         for loc in locs:
             tasks.add spawn threadworker(freq, locs, loc, grid)
 
+    var resSeq: seq[Coord]
     for task in tasks:
-        result = result + ^task
+        for t in ^task:
+            resSeq.add(t)
+    return toHashSet(resSeq)
