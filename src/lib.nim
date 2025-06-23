@@ -16,7 +16,7 @@ type
         v: seq[Coord]
         l: Lock
 
-# setMaxPoolSize(4)
+setMaxPoolSize(4)
 
 proc getInput(filename: string): string =
     result = readFile(filename)
@@ -82,14 +82,10 @@ template guardedSeqAdd(loc: Coord, guardedSeq: ptr GuardedSeq)=
         guardedSeq.v.add(loc)
     # debugecho guardedSeq.v
 
-func threadworker(locs: seq[Coord], loc: Coord,grid: Coord, guardedSeq: ptr GuardedSeq)=
-# func threadworker(locs: ptr seq[Coord], loc: Coord,grid: Coord, guardedSeq: ref GuardedSeq)=
+func threadworker(locs: ptr seq[Coord], loc: Coord,grid: Coord, guardedSeq: ptr GuardedSeq)=
     var antinode, nextNode, nextNode2, tempNode: Coord
-    # for otherLoc in locs[]:
-    for otherLoc in locs:
+    for otherLoc in locs[]:
         if otherLoc == loc: continue
-        # var tempAdd = newSeq[Coord]()
-        # tempAdd.add(otherLoc)
         guardedSeqAdd(otherLoc, guardedSeq)
         antinode = getAntinode(loc, otherLoc)
         nextNode = otherLoc
@@ -97,26 +93,19 @@ func threadworker(locs: seq[Coord], loc: Coord,grid: Coord, guardedSeq: ptr Guar
         while true:
             if inGrid(nextNode2, grid):
                 guardedSeqAdd(nextNode2, guardedSeq)
-                # tempAdd.add(nextNode2)
                 tempNode = nextNode2
                 nextNode2 = getAntinode(nextNode, nextNode2)
                 nextNode = tempNode
             else: break
-        # withLock(guardedSeq.l):
-        #     for coord in tempAdd:
-        #         guardedSeq.v.add(coord)
 
 proc getAllAntinodes2multi(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
     # var guardedSeq = new GuardedSeq
     var guardedSeq = GuardedSeq()
     guardedSeq.l.initLock()
-    # for freq, locs in antennas:
     for locs in antennas.values:
         let locsPtr = locs.addr
-        # echo &"{locsPtr.repr=}"
         for loc in locs:
-            # spawn threadworker(locsPtr, loc, grid, guardedSeq)
-            spawn threadworker(locs, loc, grid, guardedSeq.addr)
+            spawn threadworker(locs.addr, loc, grid, guardedSeq.addr)
     sync()
     withLock(guardedSeq.l):
         return toHashSet(guardedSeq.v)
