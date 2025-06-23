@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "lldb Debug",
+            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}-dbg",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "nim: build current file (for debugging)",
+            "preRunCommands": [ 
+                "command script import --allow-reload C:\\Users\\youse\\.choosenim\\toolchains\\nim-2.2.2\\tools\\debug\\nimlldb.py",
+                // "command script import --allow-reload %HOMEDRIVE%%HOMEPATH%\\.choosenim\\toolchains\\nim-2.2.2\\tools\\debug\\nimlldb.py",
+                "type summary add --summary-string \"${var.p.data%S}\" NimStringV2",
+                "set set target.max-string-summary-length 10000"
+         ],
+            // "stopOnEntry": true
+        }
+    ]
+}

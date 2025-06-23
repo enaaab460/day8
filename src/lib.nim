@@ -5,15 +5,18 @@ import std/sequtils
 import tables
 import sets
 import threadpool
+import locks
 
 type 
     Coord = object
         x, y: int
     Freq = char
-    Antenna = object
-        freq: Freq
-        loc: Coord
     GroupedAntennas = Table[Freq, seq[Coord]]
+    GuardedSeq = object
+        v: seq[Coord]
+        l: Lock
+
+# setMaxPoolSize(4)
 
 proc getInput(filename: string): string =
     result = readFile(filename)
@@ -74,34 +77,45 @@ func getAllAntinodes2(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
                         nextNode = tempNode
                     else: break
 
-# func threadworker(locs: seq[Coord], loc: Coord,grid: Coord): seq[Coord] =
-func threadworker(locs: ptr seq[Coord], loc: Coord,grid: Coord): seq[Coord] =
-    # let otherLocs = locs.filterIt(it != loc)
+func guardedSeqAdd(loc: Coord, guardedSeq: ref GuardedSeq)=
+    withLock(guardedSeq.l):
+        guardedSeq.v.add(loc)
+        # debugecho guardedSeq.v
+
+func threadworker(locs: seq[Coord], loc: Coord,grid: Coord, guardedSeq: ref GuardedSeq)=
+# func threadworker(locs: ptr seq[Coord], loc: Coord,grid: Coord, guardedSeq: ref GuardedSeq)=
     var antinode, nextNode, nextNode2, tempNode: Coord
-    # for otherLoc in otherLocs:
-    for otherLoc in locs[]:
+    # for otherLoc in locs[]:
+    for otherLoc in locs:
         if otherLoc == loc: continue
-        result.add(otherLoc)
+        # var tempAdd = newSeq[Coord]()
+        # tempAdd.add(otherLoc)
+        guardedSeqAdd(otherLoc, guardedSeq)
         antinode = getAntinode(loc, otherLoc)
         nextNode = otherLoc
         nextNode2 = antinode
         while true:
             if inGrid(nextNode2, grid):
-                result.add(nextNode2)
+                guardedSeqAdd(nextNode2, guardedSeq)
+                # tempAdd.add(nextNode2)
                 tempNode = nextNode2
                 nextNode2 = getAntinode(nextNode, nextNode2)
                 nextNode = tempNode
             else: break
+        # withLock(guardedSeq.l):
+        #     for coord in tempAdd:
+        #         guardedSeq.v.add(coord)
 
 proc getAllAntinodes2multi(antennas: GroupedAntennas, grid: Coord): HashSet[Coord] =
-    var tasks: seq[Flowvar[seq[Coord]]]
-    for freq, locs in antennas:
+    var guardedSeq = new GuardedSeq
+    guardedSeq.l.initLock()
+    # for freq, locs in antennas:
+    for locs in antennas.values:
         let locsPtr = locs.addr
+        # echo &"{locsPtr.repr=}"
         for loc in locs:
-            tasks.add spawn threadworker(locsPtr, loc, grid)
-
-    var resSeq: seq[Coord]
-    for task in tasks:
-        for t in ^task:
-            resSeq.add(t)
-    return toHashSet(resSeq)
+            # spawn threadworker(locsPtr, loc, grid, guardedSeq)
+            spawn threadworker(locs, loc, grid, guardedSeq)
+    sync()
+    withLock(guardedSeq.l):
+        return toHashSet(guardedSeq.v)

@@ -9,6 +9,6 @@ when isMainModule:
     # echo antinodes
     let antinodes2 = getAllAntinodes2(antennas, grid)
     echo antinodes2.len
+    # echo antinodes2
     let antinodes3 = getAllAntinodes2multi(antennas, grid)
     echo antinodes3.len
-    # echo antinodes2

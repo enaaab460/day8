@@ -11,5 +11,11 @@ timeit "level1":
 timeit "level2":
     discard getAllAntinodes2(antennas, grid)
 
+# var multicoreCounter = 0
 timeit "level2 multicore":
-    discard getAllAntinodes2multi(antennas, grid)
+    # try:
+        discard getAllAntinodes2multi(antennas, grid)
+    #     inc multicoreCounter
+    # except:
+    #     echo "failed"
+    #     echo multicoreCounter
